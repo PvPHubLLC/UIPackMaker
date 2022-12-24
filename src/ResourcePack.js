@@ -41,6 +41,9 @@ class ResourcePack {
         fs.mkdirSync(location + "/assets/minecraft/font/", { recursive: true })
         fs.mkdirSync(location + "/assets/minecraft/models/", { recursive: true })
         fs.mkdirSync(location + "/assets/minecraft/textures/", { recursive: true })
+        // Copy the pack.png
+        if (this.pack_png != undefined)
+            fs.copyFileSync(this.pack_png ,location + "/pack.png")
         // Write the blank png
         fs.copyFileSync("./src/assets/pixel.png", location + "/assets/minecraft/textures/blank.png")
         this.providers.push({ 
