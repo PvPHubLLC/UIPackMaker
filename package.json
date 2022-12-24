@@ -1,0 +1,11 @@
+{
+  "name": "resourcepackmaker",
+  "version": "1.0.0",
+  "description": "Easily create resource packs for GUIs and custom text.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "MattMX",
+  "license": "ISC"
+}
