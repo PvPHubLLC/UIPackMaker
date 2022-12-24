@@ -7,6 +7,11 @@ pack.image("assets/example.png", null, {
     height: 139,
     chars: ["ㇺ"]
 })
+pack.image("assets/flame.png", null, {
+    ascent: 96,
+    height: 96,
+    chars: ["✿"]
+})
 
 // pack["hello"]
 
