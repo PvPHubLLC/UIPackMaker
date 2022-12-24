@@ -1,5 +1,6 @@
 const fs = require("fs")
 const path = require("path")
+const { decode } = require("punycode")
 
 class ResourcePack {
 
@@ -25,7 +26,7 @@ class ResourcePack {
             file: "minecraft:" + resultFile,
             ascent: options.ascent,
             height: options.height,
-            chars: options.chars
+            chars: options.chars.map((i) => { return escape(unescape(i)) })
          })
     }
 
@@ -51,10 +52,10 @@ class ResourcePack {
             file: "minecraft:blank.png",
             ascent: -2000,
             height: -3,
-            chars: [ this.blank.char ]
+            chars: [ escape(unescape(this.blank.char)) ]
          })
         // Write the font/default.json file
-        fs.writeFileSync(location + "/assets/minecraft/font/default.json", JSON.stringify({ providers: this.providers }, null, 2))
+        fs.writeFileSync(location + "/assets/minecraft/font/default.json", JSON.stringify({ providers: this.providers }, null, 2).replaceAll("%", "\\"))
         this.imagesToMove.forEach((value) => {
             let outPath = path.dirname(location + "/assets/minecraft/textures/" + value.resultFile)
             fs.mkdirSync(outPath, { recursive: true })

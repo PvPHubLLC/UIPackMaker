@@ -11,7 +11,7 @@ pack.image("assets/example.png", null, {
 pack.image("assets/pvphub_smaller.png", null, {
     ascent: 32,
     height: 64,
-    chars: ["⅍"]
+    chars: ["\uE001"]
 })
 
 // pack["hello"]
