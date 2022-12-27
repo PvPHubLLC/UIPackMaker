@@ -13,6 +13,21 @@ pack.image("assets/pvphub_smaller.png", null, {
     height: 64,
     chars: ["\uE001"]
 })
+pack.image("assets/testhutop_left.png", null, {
+    ascent: 10,
+    height: 120,
+    chars: ["\uE002"]
+})
+pack.image("assets/testhutop_right.png", null, {
+    ascent: 10,
+    height: 120,
+    chars: ["\uE003"]
+})
+pack.image("assets/testhudbottom.png", null, {
+    ascent: 32,
+    height: 118,
+    chars: ["\uE004"]
+})
 
 // pack["hello"]
 
